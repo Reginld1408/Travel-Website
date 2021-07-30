@@ -1,0 +1,77 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' integrity='sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=' crossorigin='anonymous')
+  link(rel='stylesheet' href='css/utilities.css')
+  link(rel='stylesheet' href='css/style.css')
+  title Thank you
+header.hero.blog
+  #navbar.navbar.top
+    h1.logo
+      span.text-primary
+        i.fas.fa-feather
+        |  Blue
+      | Sky
+    nav
+      ul
+        li
+          a(href='http://localhost:8000/') Home
+        li
+          a(href='http://localhost:8000/') About
+        li
+          a(href='http://localhost:8000/') Packages
+        li
+          a(href='http://localhost:8000/') Login
+        li
+          a(href='http://localhost:8000/') Contact
+  .content
+    h1  thank you for reaching out to us #{name}
+main
+  article.flex-columns
+    .row
+      .column
+        .column-1
+          img(src='images/home/people.jpg' alt='')
+      .column
+        .column-2.bg-light
+          h2 Let's connect !
+          
+          p
+            | We'll have an agent contact you
+            | within 24-32hrs by phone or email.
+           
+            
+          a.btn.btn-dark(href='http://localhost:8000/')
+            i.fas.fa-chevron
+            |                 Return
+  
+footer.footer.bg-dark
+  .social
+    a(href='#')
+      i.fab.fa-facebook.fa-2x
+    a(href='#')
+      i.fab.fa-twitter.fa-2x
+    a(href='#')
+      i.fab.fa-youtube.fa-2x
+    a(href='#')
+      i.fab.fa-linkedin.fa-2x
+  p Copyright &copy; 2021 - BlueSky
+script.
+  const navbar = document.getElementById('navbar');
+  let scrolled = false;
+  window.onscroll = function () {
+  if (window.pageYOffset > 100) {
+  navbar.classList.remove('top');
+  if (!scrolled) {
+  navbar.style.transform = 'translateY(-70px)';
+  }
+  setTimeout(function () {
+  navbar.style.transform = 'translateY(0)';
+  scrolled = true;
+  }, 200);
+  } else {
+  navbar.classList.add('top');
+  scrolled = false;
+  }
+  };

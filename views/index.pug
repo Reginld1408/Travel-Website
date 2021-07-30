@@ -1,0 +1,255 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='shortcut icon' type='image/x-icon' href='/favicon.ico')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' integrity='sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=' crossorigin='anonymous')
+  link(rel='stylesheet' href='css/lightbox.min.css')
+  link(rel='stylesheet' href='css/utilities.css')
+  link(rel='stylesheet' href='css/style.css')
+  title Welcome To BlueSky Travel
+header.hero
+  #navbar.navbar.top
+    h1.logo
+      span.text-primary
+        i.fas.fa-feather
+        |  Blue
+      | Sky
+    nav
+      ul
+        li
+          a(href='#home') Home
+        li
+          a(href='#about') About
+        li
+          a(href='#cases') Packages
+        li
+          a(href='#account') Login
+        li
+          a(href='#contact') Contact
+  .content
+    h1 The Sky Is The Limit
+    p Travel with BlueSky
+    a.btn(href='#about')
+      i.fas.fa-chevron-right
+      |  Read More
+    p #{greet}
+   
+main
+  // About: Icons
+  section#about.icons.bg-light
+    .flex-items
+      div
+        i.fas.fa-plane.fa-2x
+        div
+          h3 Flights
+          p
+            | Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            | Tempore, iusto!
+      div
+        i.fas.fa-hotel.fa-2x
+        div
+          h3 Hotels
+          p
+            | Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            | Tempore, iusto!
+      div
+        i.fas.fa-car.fa-2x
+        div
+          h3 Vehicles
+          p
+            | Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            | Tempore, iusto!
+  // About:Solutions
+  section.solutions.flex-columns
+    .row
+      .column
+        .column-1
+          img(src='images/home//chris-lawton-duQ1ulzTJbM-unsplash.jpg' alt='')
+      .column
+        .column-2.bg-primary
+          h4 What you&apos;re looking for
+          h2 We provide world class travel packages
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+            | illum, animi earum ea amet sequi reiciendis sit corporis sunt
+            | iusto cupiditate odio maxime adipisci cumque eligendi nemo
+            | dolore id itaque?
+          a.btn.btn-outline(href='#')
+            i.fas.fa-chevron
+            |                 Read More
+  // Cases
+  section#cases.cases.flex-grid.section-padding
+    header.section-header
+      h4 This is what we do
+      h2 Vacation Packages
+      p
+        | Choose your vacation destination!
+    .row
+      .column
+        a(href='images/cases/cases1.jpg' data-lightbox='cases' data-title='Travel to France')
+          img(src='images/cases/cases1.jpg' alt='')
+        a(href='images/cases/cases2.jpg' data-lightbox='cases' data-title='Travel to Mexico')
+          img(src='images/cases/cases2.jpg' alt='')
+      .column
+        a(href='images/cases/cases3.jpg' data-lightbox='cases' data-title='Travel to China')
+          img(src='images/cases/cases3.jpg' alt='')
+        a(href='images/cases/cases4.jpg' data-lightbox='cases' data-title='Travel to the United Kingdom')
+          img(src='images/cases/cases4.jpg' alt='')
+      .column
+        a(href='images/cases/cases5.jpg' data-lightbox='cases' data-title='Travel to Germany')
+          img(src='images/cases/cases5.jpg' alt='')
+        a(href='images/cases/cases6.jpg' data-lightbox='cases' data-title='Travel to Italy')
+          img(src='images/cases/cases6.jpg' alt='')
+      .column
+        a(href='images/cases/cases7.jpg' data-lightbox='cases' data-title='Travel to Spain')
+          img(src='images/cases/cases7.jpg' alt='')
+        a(href='images/cases/cases8.jpg' data-lightbox='cases' data-title='Travel to America')
+          img(src='images/cases/cases8.jpg' alt='')
+  // Account
+  section#account.account.flex-columns.flex-reverse
+    .row
+      .column
+        .column-1
+          img(src='images/home/boat.jpg' alt='')
+      .column
+        .column-2.bg-secondary
+          main.form-signin(text='text-center')
+            form
+              img.mb-4(src='../assets/brand/bootstrap-logo.svg' alt='' width='72' height='57')
+              h2.h3.mb-3.fw-normal Please login
+              .form-floating
+                input#floatingInput.form-control(type='text' placeholder='Username' required)
+                label(for='floatingInput') Username
+              .form-floating
+                input#floatingPassword.form-control(type='password' placeholder='Password' required)
+                label(for='floatingPassword') Password
+              .checkbox.mb-3
+                label
+                  input(type='checkbox' value='remember-me')
+                  |  Remember me
+              input(type='submit' value='Login' id='btnsign.w-100.btn.btn-lg.btn-primary')
+              //- button#btnsign.w-100.btn.btn-lg.btn-primary(type='submit') Sign in
+            br
+            h1 -or-
+            br
+            div
+            h2 Please register
+            form(id = "register" action='/thankyoureg' method='post')
+             input(type='email' name='email' placeholder='Email' required)
+             label(for='email') Email
+             input(type='text' name='username' placeholder='Username' required)
+             label(for='username') User Name
+             input(type='password' name='password' placeholder='Password' required)
+             label(for='password') Password
+             input(type='password' name='password' placeholder='Retype Password' required)
+             label(for='password') Retype 
+             .checkbox.mb-3
+                label
+                  input(type='checkbox' value='remember-me')
+                  |  Remember me
+             input(type='submit' value='Register' id='btnreg.w-100.btn.btn-lg.btn-primary')
+              
+  br
+  br
+  // Blog
+  section#blog.blog.flex-columns
+   .row
+    .column
+      .column-1
+        img(src='images/home/blog.jpg' alt='')
+    .column
+      .column-2.bg-primary 
+        h4 April 16 2020
+        h2 Blog Post One
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+          | illum, animi earum ea amet sequi reiciendis sit corporis sunt
+          | iusto cupiditate odio maxime adipisci cumque eligendi nemo
+          | dolore id itaque?
+        a.btn.btn-outline(href='http://localhost:8000/blog')
+          i.fas.fa-chevron
+          |                 Read Our Blog
+  br
+  br
+  section#contact.contact.flex-columns
+    .row
+      .column
+        .column-1
+          img(src='images/home/contact.jpg' alt='')
+      .column
+        .column-2.bg-light
+          h2 Contact Us
+
+          form.callback-form(method='POST' action='/')
+            label
+              | Name:
+              input(type='text' name='name' placeholder='Name' required)
+            br
+            label
+              | Email:
+              input(type='email' name='email' placeholder='Email' required)
+            br
+            label   
+              | Phone:
+              input(type='tel' name='number' placeholder='Phone' required)
+            br
+            label
+              | Comment:
+              br
+              textarea(name='comment' type="text")
+            br
+   
+            input(type='submit' value='Submit' id='subbtn')
+        if errors
+              ul
+                each error in errors
+                  li.alert.alert-danger.m3= error  
+    
+
+footer.footer.bg-dark
+  .social
+    a(href='#')
+      i.fab.fa-facebook.fa-2x
+    a(href='#')
+      i.fab.fa-twitter.fa-2x
+    a(href='#')
+      i.fab.fa-youtube.fa-2x
+    a(href='#')
+      i.fab.fa-linkedin.fa-2x
+  p Copyright &copy; 2021 - BlueSky
+script(src='https://code.jquery.com/jquery-3.5.0.min.js' integrity='sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=' crossorigin='anonymous')
+script(src='js/lightbox.min.js')
+script(src='index.js')
+script.
+  const navbar = document.getElementById('navbar');
+  let scrolled = false;
+  window.onscroll = function () {
+  if (window.pageYOffset > 100) {
+  navbar.classList.remove('top');
+  if (!scrolled) {
+  navbar.style.transform = 'translateY(-70px)';
+  }
+  setTimeout(function () {
+  navbar.style.transform = 'translateY(0)';
+  scrolled = true;
+  }, 200);
+  } else {
+  navbar.classList.add('top');
+  scrolled = false;
+  }
+  };
+  // Smooth Scrolling
+  $('#navbar a, .btn').on('click', function (e) {
+  if (this.hash !== '') {
+  e.preventDefault();
+  const hash = this.hash;
+  $('html, body').animate(
+  {
+  scrollTop: $(hash).offset().top - 100,
+  },
+  800
+  );
+  }
+  });
+  
