@@ -61,7 +61,6 @@ router.post("/create", function (req, res, next) {
   console.log(req.user);
   post.user = req.user._id;
   post.save((err) => {
-    // if(err) throw err;
     if (err) {
       const errorArray = [];
       const errorKeys = Object.keys(err.errors);
