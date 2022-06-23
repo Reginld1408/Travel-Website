@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
 const contdetails = require("../models/contactmdl").details
 var greetings = ['Hello',
 'Hello There',
@@ -31,8 +30,6 @@ var greetings = ['Hello',
 'Good day to you!',
 'A Hoy Hoy!'];
 
-
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -40,7 +37,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/thankyou', function(req, res, next) {
-
   res.render('thankyou',  {name:req.session.name});
 });
 
@@ -49,15 +45,15 @@ router.use('/blog', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   const details = new contdetails();
   details.name = req.body.name;
   details.email = req.body.email;
   details.number = req.body.number;
   details.comment = req.body.comment;
-  console.log('Savig the contact data')
+  console.log('Saving the contact data');
   details.save(err => {
-    // if(err) throw err;
+
     if (err) {
       console.log(err)
       const errorArray = [];
@@ -68,30 +64,19 @@ router.post('/', (req, res) => {
       });
     }
     
-    // details.findOne({ name: details.name }, (err, post) => {
-    //   res.render("thankyou", {username: post});
-    // });
-   console.log('Going to thank you page')
+   console.log('Going to thank you page');
     req.session.name = req.body.name;
     res.redirect('/thankyou');
-
   });
- 
 })
 
 router.post('/index', (req, res) => {
   const data = req.body
   console.log(data)
 
-  console.log(data.username, data.password)
+  console.log(data.username, data.password);
   req.session.name = req.body.name;
-  res.redirect('/thankyou')
-
-  console.log(req.url)
-
+  res.redirect('/thankyou');
+  console.log(req.url);
 });
-
-
-
 module.exports = router;
-
