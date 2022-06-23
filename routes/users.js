@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-// const { User } = require("../models/user");
 const bcrypt = require("bcryptjs");
 
 const pageRegister = {
@@ -36,7 +35,6 @@ router.post("/sign-up", function (req, res, next) {
       if (err) {
         return processErrors(err, req, res);
       }
-      //console.log(result);
       const headermessage = `Account created ${result.fname}`;
       res.redirect("/?headermessage=" + headermessage);
     });
@@ -56,5 +54,3 @@ function processErrors(errs, req, res) {
 }
 
 module.exports = router;
-
-
