@@ -8,7 +8,6 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-
 var app = express();
 // Proxy the dash request to the Python server
 app.all(/(data|_dash|_reload)\S*/, require("./routes/data-proxy"));
@@ -35,8 +34,6 @@ require("./my-passport").init(app);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -47,8 +44,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/blog', (req, res) => {
   res.render("blog")
 })
-
-
 
 app.post('/thankyoureg', (req, res) => {
     res.render("thankyoureg")
@@ -66,14 +61,8 @@ app.post('/index', (req, res) => {
 
 });
 
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-
-
-
-
 
 app.use((req, res, next) => {
 
@@ -91,7 +80,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 module.exports = app;
 
